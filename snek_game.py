@@ -47,5 +47,32 @@ class Snek_Game:
         _y = 0
 
         while not game_over:
-            
 
+            while game_close == True:
+                display.fill(white)
+                pygame.display.update()
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    game_over = True
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_LEFT:
+                        _x = -snek_size
+                        _y = 0
+                    elif event.key == pygame.K_RIGHT:
+                        _x = snek_size
+                        _y = 0
+                    elif event.key == pygame.K_UP:
+                        _x = 0
+                        _y = -snek_size
+                    elif event.key == pygame.K_DOWN:
+                        _x = 0
+                        _y = snek_size
+                if x >= dis_width or x < 0 or y >= dis_height or y < 0:
+                    game_close = True
+                x += _x
+                y += _y
+                display.fill(white)
+                pygame.draw.rect(display, blue, [x, y, snek_size, snek_size])
+                pygame.display.update()
+                
