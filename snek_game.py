@@ -78,7 +78,8 @@ class Snek_Game:
         
         pygame.quit()
         quit()
-
+    def exec(self):
+        self.game_loop(self.dis_width, self.dis_height, self.white, self.snek_size, self.blue)
 
 
                 
