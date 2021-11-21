@@ -14,28 +14,28 @@ class Snek_Game:
         pygame.init()
 
         #display width and height variables
-        dis_width = 800
-        dis_height = 800
+        self.dis_width = 800
+        self.dis_height = 800
 
         #color palette variables (R,G,B)
-        white = (255, 255, 255)
-        black = (0, 0, 0)
-        red = (255, 0, 0)
-        blue = (0, 0, 255)
+        self.white = (255, 255, 255)
+        self.black = (0, 0, 0)
+        self.red = (255, 0, 0)
+        self.blue = (0, 0, 255)
 
         #setting up the screen
-        display = pygame.display.set_mode((dis_width, dis_height))
+        self.display = pygame.display.set_mode((self.dis_width, self.dis_height))
 
         pygame.display.set_caption('Snek Game')
 
-        clock = pygame.time.Clock()
+        self.clock = pygame.time.Clock()
 
         #snake's attributes
-        snek_size = 10
-        snek_speed = 30 
+        self.snek_size = 10
+        self.snek_speed = 30 
 
     
-    def game_loop(dis_width, dis_height, white, snek_size, blue):
+    def game_loop(self.dis_width, self.dis_height, self.white, self.snek_size, self.blue):
 
         game_over = False 
         game_close = False
