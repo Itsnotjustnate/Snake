@@ -18,10 +18,10 @@ class Snek_Game:
         dis_height = 800
 
         #color palette variables (R,G,B)
-        white = (255,255,255)
-        black = (0,0,0)
-        red = (255,0,0)
-        blue = (0,0,255)
+        white = (255, 255, 255)
+        black = (0, 0, 0)
+        red = (255, 0, 0)
+        blue = (0, 0, 255)
 
         #setting up the screen
         display = pygame.display.set_mode((dis_width, dis_height))
@@ -35,7 +35,7 @@ class Snek_Game:
         snek_speed = 30 
 
     
-    def game_loop(dis_width, dis_height):
+    def game_loop(dis_width, dis_height, white, snek_size, blue):
 
         game_over = False 
         game_close = False
@@ -75,4 +75,10 @@ class Snek_Game:
                 display.fill(white)
                 pygame.draw.rect(display, blue, [x, y, snek_size, snek_size])
                 pygame.display.update()
+        
+        pygame.quit()
+        quit()
+
+
+
                 
