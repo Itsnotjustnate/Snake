@@ -35,13 +35,13 @@ class Snek_Game:
         self.snek_speed = 30 
 
     
-    def game_loop(self.dis_width, self.dis_height, self.white, self.snek_size, self.blue):
+    def game_loop(self):
 
         game_over = False 
         game_close = False
 
-        x = dis_width / 2
-        y = dis_height / 2
+        x = self.dis_width / 2
+        y = self.dis_height / 2
     
         _x = 0
         _y = 0
@@ -49,7 +49,7 @@ class Snek_Game:
         while not game_over:
 
             while game_close == True:
-                display.fill(white)
+                self.display.fill(white)
                 pygame.display.update()
 
             for event in pygame.event.get():
@@ -57,29 +57,30 @@ class Snek_Game:
                     game_over = True
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_LEFT:
-                        _x = -snek_size
+                        _x = -self.snek_size
                         _y = 0
                     elif event.key == pygame.K_RIGHT:
-                        _x = snek_size
+                        _x = self.snek_size
                         _y = 0
                     elif event.key == pygame.K_UP:
                         _x = 0
-                        _y = -snek_size
+                        _y = -self.snek_size
                     elif event.key == pygame.K_DOWN:
                         _x = 0
-                        _y = snek_size
-                if x >= dis_width or x < 0 or y >= dis_height or y < 0:
+                        _y = self.snek_size
+                if x >= self.dis_width or x < 0 or y >= self.dis_height or y < 0:
                     game_close = True
                 x += _x
                 y += _y
-                display.fill(white)
-                pygame.draw.rect(display, blue, [x, y, snek_size, snek_size])
+                self.display.fill(self.white)
+                pygame.draw.rect(self.display, self.blue, [x, y, self.snek_size, self.snek_size])
                 pygame.display.update()
         
         pygame.quit()
         quit()
+        
     def exec(self):
-        self.game_loop(self.dis_width, self.dis_height, self.white, self.snek_size, self.blue)
+        self.game_loop()
 
 
                 
